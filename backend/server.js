@@ -9,8 +9,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Allowed origins (puedes ajustar en .env)
-const FRONTEND_ORIGINS = (process.env.FRONTEND_ORIGINS || 'http://localhost:5500,https://gitdarweb.github.io').split(',');
+// Allowed origins (puedes ajustar en .env o Render dashboard)
+const FRONTEND_ORIGINS = (process.env.FRONTEND_ORIGINS || '*,https://carritoavanti.onrender.com').split(','); // Actualizado: fallback a Render URL + * para pruebas
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -26,6 +26,7 @@ app.use(helmet());
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/img', express.static(path.join(__dirname, '../frontend/img')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 app.use(rateLimit({ windowMs: 60 * 1000, max: 60 }));
 
 // ---------------------------
@@ -206,6 +207,11 @@ app.get('/api/products', (req, res) => {
     }
 });
 
+// Ruta para servir index.html (frontend)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
 // ---------------------------
 // Endpoint de pago - acepta { carrito: [...] } o [...]
 // ---------------------------
@@ -243,9 +249,9 @@ app.post('/create_preference', async (req, res) => {
         const preference = {
             items,
             back_urls: {
-                success: 'https://gitdarweb.github.io/AvantiHairSalon/pago-exitoso.html',
-                failure: 'https://gitdarweb.github.io/AvantiHairSalon/pago-fallido.html',
-                pending: 'https://gitdarweb.github.io/AvantiHairSalon/pago-pendiente.html',
+                success: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-exitoso.html` : 'https://carritoavanti.onrender.com/pago-exitoso.html', // Actualizado: fallback a Render URL
+                failure: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-fallido.html` : 'https://carritoavanti.onrender.com/pago-fallido.html', // Actualizado: fallback a Render URL
+                pending: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-pendiente.html` : 'https://carritoavanti.onrender.com/pago-pendiente.html', // Actualizado: fallback a Render URL
             },
             auto_return: 'approved',
         };
@@ -267,11 +273,11 @@ app.post('/create_preference', async (req, res) => {
 });
 
 // Health
-app.get('/', (_req, res) => res.send('✅ Backend Avanti funcionando'));
+app.get('/health', (_req, res) => res.send('✅ Backend Avanti funcionando'));
 
 // Start
 app.listen(PORT, () => {
-    console.log(`🚀 Backend Avanti seguro en http://localhost:${PORT}`);
+    console.log(`🚀 Backend Avanti seguro en puerto ${PORT} (Render: ${process.env.RENDER ? 'https://carritoavanti.onrender.com' : 'http://localhost:' + PORT})`); // Actualizado: URL específica de Render
     console.log(`Allowed origins: ${FRONTEND_ORIGINS.join(',')}`);
 });
 /**
@@ -282,7 +288,8 @@ app.listen(PORT, () => {
  *    GET  /api/products     -> filtros: ?brand=moroccanoil | ?category=shampoos | ?q=texto
  *    POST /create_preference -> acepta { carrito: [...] } o [...] -> crea preferencia MP
  *
- * Requisitos: tener en backend/.env:
+ * Requisitos: tener en Render dashboard (Environment Variables):
  *   MERCADOPAGO_ACCESS_TOKEN=TU_TOKEN
- *   FRONTEND_ORIGINS=http://localhost:5500,https://gitdarweb.github.io
+ *   FRONTEND_ORIGINS=*,https://carritoavanti.onrender.com
+ *   FRONTEND_URL=https://carritoavanti.onrender.com
  */
