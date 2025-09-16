@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Allowed origins (puedes ajustar en .env o Render dashboard)
-const FRONTEND_ORIGINS = (process.env.FRONTEND_ORIGINS || '*,https://carritoavanti.onrender.com').split(','); // Actualizado: fallback a Render URL + * para pruebas
+const FRONTEND_ORIGINS = (process.env.FRONTEND_ORIGINS || '*,https://carritoavanti.onrender.com').split(','); // Corregido: única definición, fallback a Render URL + * para pruebas
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -249,9 +249,9 @@ app.post('/create_preference', async (req, res) => {
         const preference = {
             items,
             back_urls: {
-                success: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-exitoso.html` : 'https://carritoavanti.onrender.com/pago-exitoso.html', // Actualizado: fallback a Render URL
-                failure: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-fallido.html` : 'https://carritoavanti.onrender.com/pago-fallido.html', // Actualizado: fallback a Render URL
-                pending: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-pendiente.html` : 'https://carritoavanti.onrender.com/pago-pendiente.html', // Actualizado: fallback a Render URL
+                success: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-exitoso.html` : 'https://carritoavanti.onrender.com/pago-exitoso.html', // Corregido: fallback a Render URL
+                failure: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-fallido.html` : 'https://carritoavanti.onrender.com/pago-fallido.html', // Corregido: fallback a Render URL
+                pending: process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/pago-pendiente.html` : 'https://carritoavanti.onrender.com/pago-pendiente.html', // Corregido: fallback a Render URL
             },
             auto_return: 'approved',
         };
@@ -277,7 +277,7 @@ app.get('/health', (_req, res) => res.send('✅ Backend Avanti funcionando'));
 
 // Start
 app.listen(PORT, () => {
-    console.log(`🚀 Backend Avanti seguro en puerto ${PORT} (Render: ${process.env.RENDER ? 'https://carritoavanti.onrender.com' : 'http://localhost:' + PORT})`); // Actualizado: URL específica de Render
+    console.log(`🚀 Backend Avanti seguro en puerto ${PORT} (Render: ${process.env.RENDER ? 'https://carritoavanti.onrender.com' : 'http://localhost:' + PORT})`); // Corregido: URL específica de Render
     console.log(`Allowed origins: ${FRONTEND_ORIGINS.join(',')}`);
 });
 /**
