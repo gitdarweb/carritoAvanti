@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ✅ Codificación y responsive -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Título SEO + Branding -->
+    <title>Avanti✨Tienda Online | Productos Profesionales para el Cabello</title>
+    <meta name="description"
+        content="Tienda online con productos profesionales de peluquería. Moroccanoil, Revlon, Tigi, Olaplex y más. Envíos a todo el país. Calidad y asesoramiento personalizado." />
+    <meta name="author" content="Avanti Hair Salon" />
+
+    <!-- ✅ Meta redes sociales (Open Graph para compartir) -->
+    <meta property="og:title" content="Avanti✨Tienda Online" />
+    <meta property="og:description"
+        content="Elegí calidad, elegí Avanti. Productos de peluquería profesional al alcance de todos." />
+
+    <meta property="og:type" content="website" />
+
+    <!-- ✅ Ícono para pestaña del navegador -->
+    <link rel="icon" href="img/branding/favicon.ico" type="image/x-icon" />
+
+    <!-- ✅ Estilo principal del sitio -->
+    <link rel="stylesheet" href="../css/styles.css" />
+
+   
+    <!-- ✅ FontAwesome: íconos sociales / carrito / menú -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+<!-- ==== TOP BAR ==== -->
+<div class="top-bar">
+    <p>
+        <span class="topbar-normal">Tienda Online</span> |
+        <span class="topbar-bold">Productos Profesionales</span>
+    </p>
+</div>
+<!-- ==== HEADER ==== -->
+<header class="site-header">
+    <a href="../index.html" class="logo">
+        <img src="../img/branding/Logo-dorado.png" alt="Avanti Hair Salon" />
+    </a>
+
+    <!-- Menú horizontal (desktop) -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../index.html#categorias">Catálogos</a></li>
+            <li><a href="../index.html#productos">Productos</a></li>
+            <li><a href="../index.html#como-comprar">Cómo Comprar</a></li>
+            <li><a href="../index.html#nosotras">Nosotras</a></li>
+            <li><a href="../index.html#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Buscador -->
+<!-- <div class="search-bar">
+        <input type="text" placeholder="¿Qué estás buscando?" />
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+    </div>-->
+
+    <!-- Carrito -->
+    <div class="user-actions">
+        <a href="../carrito.html" class="carrito-link">
+            <i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)
+        </a>
+    </div>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button class="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- ==== Menú lateral (móvil) ==== -->
+ 
+<nav class="sidebar" id="sidebar">
+    <ul>
+        <li><a href="../index.html#categorias">Catálogos</a></li>
+        <li><a href="../index.html#productos">Productos</a></li>
+        <li><a href="../index.html#como-comprar">Cómo Comprar</a></li>
+        <li><a href="../index.html#nosotras">Nosotras</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- Overlay -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- Banner / título -->
+<section class="banner-categoria fade-in">
+    <!-- Reemplaza {{marca}} por el slug de la marca, p.ej. "revlon" -->
+    <img src="../img/portadas/portada-TIGI.jpg" alt="Tigi" />
+    <!-- Reemplaza {{Marca}} por el nombre de la marca con mayúscula inicial -->
+    <h2>Catálogo TIGI</h2>
+</section>
+
+<!-- Productos -->
+<section class="productos-marca">
+    <div id="contenedor-productos" class="grid-categorias"></div>
+</section>
+
+
+<!-- ==== FOOTER ==== -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Columna Avanti -->
+        <div class="footer-column about">
+            <h3>Avanti Hair Salon</h3>
+            <p>La Plata • Productos y asesoramiento de calidad</p>
+        </div>
+
+        <!-- Columna de navegación -->
+        <div class="footer-column links">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="../index.html#categorias">Catálogos</a></li>
+                <li><a href="../index.html#productos">Productos</a></li>
+                <li><a href="../index.html#como-comprar">Cómo Comprar</a></li>
+                <li><a href="../index.html#nosotras">Nosotras</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna Legal y redes -->
+        <div class="footer-column legal">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="../terminos.html">Términos</a></li>
+                <li><a href="../privacidad.html">Política de Privacidad</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://instagram.com/avanti.hairsalon" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/5492216908851" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copy">
+        <p>© 2025 Avanti Hair Salon – La Plata</p>
+    </div>
+</footer>
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/5492216908851" class="whatsapp-float" target="_blank" aria-label="Chatear por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        </a>
+    <!-- Scripts -->
+    <script src="../js/products.js"></script> <!-- catálogo de respaldo local -->
+    <script src="../js/carts.js"></script> <!-- lógica del carrito -->
+    <script src="../js/main.js"></script> <!-- lógica general -->
+    <script src="../js/slider.js"></script> <!-- efectos visuales -->
+    <script src="../js/renderProducts.js"></script> <!-- render dinámico -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Ejemplo: cargar categoría
+            renderizarProductosPor('marca', 'tigi');
+
+            // O si es una página de marca, usar:
+            // renderizarProductosPor("marca", "moroccanoil");
+
+            // Además, actualizar carrito en el header
+            actualizarContadorCarrito();
+        });
+    </script>
+
+
+</body>
+
+</html>

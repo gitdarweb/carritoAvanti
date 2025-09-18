@@ -1,0 +1,139 @@
+/* base.css – Estilos basales generales de Avanti Hair Salon */
+/* Trabajado hasta 30/07/2025 */
+
+html {
+    font-size: 16px;
+    /* base para responsive typography */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* ================================================
+   Título destacado como solapa de sección (solapa)
+   ================================================ */
+.section-title {
+    position: relative;
+    display: inline-block;
+    background-color: var(--color-primary-darker);
+    padding: 0.35rem 0.7rem;
+    margin: 1rem auto;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.875rem;
+    color: #fff;
+    text-align: center;
+    border-left: 2px solid #0A3A41;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0 6px 6px 0;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* === ANIMACIONES FADE-IN CON SCROLL === */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* — Pequeño padding lateral SÓLO en el contenido principal — */
+.contenedor-limitado,
+.info-sections,
+.footer-container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+
+
+/* Responsive ajustes para solapa */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.6rem;
+        margin: 0.8rem auto;
+    }
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive typography base */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+/* Main CSS file (e.g., styles.css) */
+.info-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.info-sections > section {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .info-sections > section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .info-sections > section {
+        flex: 1 1 45%;
+        max-width: 500px;
+    }
+}

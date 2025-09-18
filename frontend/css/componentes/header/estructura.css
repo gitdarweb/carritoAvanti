@@ -1,0 +1,129 @@
+/* ===================== TOP BAR ===================== */
+/* archivo: estructura.css */
+.top-bar {
+    background-color: var(--color-topbar-bg);
+    /* azul verdoso oscuro */
+    color: white;
+    font-family: var(--font-sans);
+    font-weight: var(--font-light);
+    text-align: center;
+    padding: var(--spacing-sm) 0;
+}
+
+.topbar-normal {
+    color: rgba(255, 255, 255, 0.75);
+    /* blanco intermedio más oscuro */
+    font-weight: 400;
+    /* peso intermedio */
+}
+
+.topbar-bold {
+    font-weight: 700;
+    /* negrita */
+    color: white;
+}
+
+/* ===================== HEADER BASE ===================== */
+/*— Evita que el header tape cualquier sección al hacer scroll a un ancla —*/
+html {
+    /* scroll-padding-top: espacio que el navegador descontará al hacer scroll a #id */
+    scroll-padding-top: calc(
+            /* padding vertical del top-bar (arriba + abajo) */
+            var(--spacing-sm) * 2
+            /* +
+       espacio interno (padding) top de .site-header */
+            + var(--spacing-md)
+            /* +
+       padding bottom de .site-header (mismo valor) */
+            + var(--spacing-md)
+            /* +
+       altura máxima del logo (3rem) para asegurar cobertura */
+            + 3rem);
+}
+/* archivo: estructura.css */
+.site-header {
+    background: url('../../../img/branding/fondo-original.png') center/cover no-repeat, var(--color-primary-dark);
+   
+    /* Igual que el header */
+    display: flex;
+    flex-wrap: wrap;+
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    position: relative;
+}
+
+
+
+/* ===================== LOGO ===================== */
+.site-header .logo img {
+    max-height: 3rem;
+    display: block;
+}
+
+/* ===================== NAV DESKTOP ===================== */
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: #fff;
+    font-family: var(--font-sans);
+    font-weight: var(--font-light);
+    text-decoration: none;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent-gold);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after {
+    width: 100%;
+}
+/* ======== REORGANIZAR HEADER EN MOBILE ======== */
+@media (max-width: 768px) {
+    .site-header {
+        flex-wrap: nowrap;
+        /* evita que bajen de línea */
+        justify-content: space-between;
+    }
+
+    /* Asignar orden */
+    .burger-menu {
+        order: 1;
+    }
+
+    .site-header .logo {
+        order: 2;
+        margin: 0 auto;
+        /* centra el logo */
+    }
+
+    .cart {
+        order: 3;
+    }
+
+    /* Ajustar tamaños para que no se aplaste nada */
+    .burger-menu,
+    .cart {
+        flex: 0 0 auto;
+    }
+
+    .site-header .logo {
+        flex: 0 1 auto;
+    }
+}

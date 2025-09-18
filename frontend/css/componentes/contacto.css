@@ -1,0 +1,66 @@
+/* ================================
+   SECCIÓN CONTACTO Y ENLACES
+   ================================ */
+/* === MÓDULO: CONTACTO AJUSTADO === */
+
+/* contacto.css */
+.contacto-card {
+    background-color:var(--color-accent-gold);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+}
+
+.contacto-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #062D30;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.contacto-card i {
+    font-size: 1.4rem;
+}
+
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #062D30;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-icon.whatsapp:hover {
+    background-color: #fff;
+    color: #25D366;
+}
+
+.contact-icon.instagram:hover {
+    background-color: #fff;
+    color: #E4405F;
+}
+
+.contact-icon.mapa:hover {
+    background-color: #fff;
+    color: #FF6F00;
+}
+
+.contact-icon:hover {
+    transform: scale(1.15);
+}

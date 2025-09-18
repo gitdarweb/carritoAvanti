@@ -1,0 +1,45 @@
+/* ===================== BOTÓN BURGER = estilos del botón hamburguesa.==================== */
+/* archivo: burger.css */
+@media (max-width: 768px) {
+    .burger {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        z-index: 1102;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 32px;
+        /* ancho estándar */
+        height: 24px;
+        /* alto estándar con espacio entre líneas */
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .burger span {
+        display: block;
+        width: 1.5rem;
+        height: 4px;
+        /* más grueso, más visible */
+        background-color: white;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        margin: 0.2rem 0;
+    }
+
+    /* Cruce en X al abrir */
+    .burger.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}

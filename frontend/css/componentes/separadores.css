@@ -1,0 +1,87 @@
+/* Unifica separadores antiguos y nuevos, restaurando dimensiones originales */
+@font-face {
+    font-family: 'Quantum Mystique';
+    src: url('../../fonts/QuantumMystique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplica a .separador-avanti (párrafos o section) y a .separador-estilo */
+.separador-avanti,
+.separador-avanti p,
+.separador-estilo {
+    background-color: var(--color-primary-dark);
+    /* Nuevo color de fondo */
+    padding: 2.5rem 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-family: 'Quantum Mystique', sans-serif;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    /* Nuevo color del texto */
+    margin: 3rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Pseudo-elemento para la línea superior */
+.separador-avanti::before,
+.separador-estilo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent-gold);
+}
+
+/* Pseudo-elemento para la línea inferior */
+.separador-avanti::after,
+.separador-estilo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent-gold);
+}
+
+/* Ajuste de párrafo interno en sección */
+.separador-avanti p {
+    margin: 0;
+}
+
+/* Icono en cualquier separador */
+.separador-avanti i,
+.separador-estilo i {
+    color: var(--separator-icon-color);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* Separador estilo */
+.separador-estilo {
+    background-color: var(--color-primary-dark);
+    /* Nuevo color de fondo */
+    padding: 2.5rem 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-family: 'Quantum Mystique', sans-serif;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    /* Nuevo color del texto */
+    margin: 3rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}

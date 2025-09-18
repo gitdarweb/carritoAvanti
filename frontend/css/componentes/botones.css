@@ -1,0 +1,84 @@
+/* ✅ Estilo base común (se mantiene) */
+.btn-hero,
+.btn-agregar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: var(--color-primary-darker, #062D30);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    gap: 0.5rem;
+}
+
+/* ✅ Hover compartido */
+.btn-hero:hover,
+.btn-agregar:hover {
+    background-color: var(--color-accent-orange);
+    transform: scale(1.05);
+}
+
+/* 🎯 Estilo exclusivo para .btn-hero (más chico) */
+.btn-hero {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+}
+
+/* 🟨 Alineación del botón en tarjetas solo para .btn-agregar */
+.card-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-producto .btn-agregar {
+    margin-top: auto;
+    width: 100%;
+}
+.btn-hero {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background:var(--color-accent-orange);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.btn-hero {
+    background: var(--color-accent-orange) !important;
+}
+.btn-hero:hover {
+    background: linear-gradient(135deg, #0D4B4C, white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 Responsive: solo .btn-agregar ocupa ancho completo en mobile */
+@media (max-width: 768px) {
+    .btn-agregar {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .btn-hero {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        width: auto;
+    }
+}
+
+

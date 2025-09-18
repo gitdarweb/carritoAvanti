@@ -1,0 +1,95 @@
+/* COMO COMPRAR - Módulo visual */
+.beneficios {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.beneficios-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beneficio {
+    background-color: #fff;
+    border: 2px solid transparent;
+    /* borde invisible por defecto */
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    /* cómodo padding */
+    width: 220px;
+    /* más compacto */
+    min-height: 240px;
+    /* menos alto */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    /* sombra muy suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.beneficio:hover {
+    border-color: transparent;
+    /* mantengo borde invisible */
+    box-shadow: 0 6px 14px rgba(6, 45, 48, 0.15);
+    /* sombra verde suave */
+    transform: translateY(-4px);
+}
+
+.beneficio img {
+    max-width: 55px;
+    /* ícono un poco más pequeño */
+    margin-bottom: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.beneficio:hover img {
+    transform: scale(1.05);
+}
+
+.beneficio h3 {
+    font-size: 1rem;
+    margin: 0.3rem 0 0.6rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    /* verde de marca */
+}
+
+.beneficio p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #555;
+    line-height: 1.3;
+    padding: 0 0.2rem;
+    /* pequeño padding para que no quede pegado al borde */
+}
+
+.explicacion-compra {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--color-topbar-bg);
+    /* Updated to use custom color variable */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .beneficios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .beneficio {
+        width: 90%;
+        max-width: 400px;
+    }
+}

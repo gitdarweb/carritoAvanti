@@ -1,0 +1,86 @@
+/* componentes/nosotras.css */
+/* Estilos para sección "Nosotras" en Avanti Hair Salon */
+@font-face {
+    font-family: 'QuantumMystique';
+    src: url('../../fonts/QuantumMystique.ttf') format('truetype');
+}
+
+.hero-info {
+background: var(--color-primary-darker);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3rem 1rem;
+}
+
+/* Contenedor general */
+.hero-info-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para el título */
+.hero-info-texto h2 {
+    font-size: 2.5rem;
+
+    /* Sin gradiente */
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+
+    /* Texto blanco */
+    -webkit-text-fill-color: white;
+    /* Safari/Chrome */
+    color: #fff;
+    /* Fallback general */
+
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'QuantumMystique', sans-serif, Arial, sans-serif;
+    /* Fuente de respaldo */
+}
+/* Texto */
+.hero-info-texto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #ffffff;
+    /* Texto blanco */
+    margin-bottom: 1.5rem;
+}
+
+/* Imagen */
+.hero-info-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-info-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-info-texto h2 {
+        font-size: 2rem;
+    }
+
+    .hero-info-texto p {
+        font-size: 1rem;
+    }
+
+    .btn-hero {
+        max-width: none;
+        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+    }
+}

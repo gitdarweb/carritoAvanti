@@ -1,0 +1,35 @@
+/* ===============================
+   TARJETA "TU CARRITO"
+   =============================== */
+/* === MÓDULO: CARRITO === */
+
+/* carrito.css */
+.carrito-card {
+    /*background: var(--color-background);
+        /* sdin fondo la tarjeta carrito.*/
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+}
+
+.carrito-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #062D30;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.carrito-card i {
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+}
+
+#carrito-status {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}

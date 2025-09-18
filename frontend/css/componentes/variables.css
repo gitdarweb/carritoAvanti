@@ -1,0 +1,49 @@
+/* componentes/variables.css */
+/* Variables globales unificadas para todo el proyecto Avanti */
+:root {
+    /* Colores primarios y secundarios */
+    --color-primary-dark: #0D4B4C;
+    /* claro 1 */
+    --color-primary-darker: #062D30;
+    /* oscuro */
+    --color-secondary-dark: #0A3A41;
+    /*color de la textura.*/
+    --color-topbar-bg: #0B292B;
+
+    /* Acentos */
+    --color-accent-green: #0D4B4C;
+    /* claro 1 */
+    /* Ajustado: Gradiente dorado con tonos oscuros para reflejar el logo Avanti */
+        --color-accent-gold: linear-gradient(90deg,
+                #F8E38E 0%,
+                    /* dorado claro al inicio */
+                    #C4902D 35%,
+                    /* empieza a oscurecer */
+                    #7E4405 50%,
+                    /* centro oscuro marcado */
+                    #C4902D 65%,
+                    /* vuelve al dorado medio */
+                    #F8E38E 100%
+                    /* dorado brillante al final */
+            );
+    --color-accent-orange:#0D4B4C;/*cambia el acento naranja al verde mas claro.*/
+
+    /* Fondo y bordes */
+    --color-background: #F9F9F9;
+    --color-card-border: rgba(13, 75, 76, 0.1);
+    --separator-bg: #f3fdfc;
+    --separator-border: #cce5e3;
+    --color-black: #000000;
+
+    /* Tipografía */
+    --font-sans: 'Montserrat', sans-serif;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-semi: 600;
+
+    /* Espaciado */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}

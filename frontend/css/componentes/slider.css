@@ -1,0 +1,203 @@
+/* ============================
+   SLIDER PRINCIPAL (Hero)
+   ============================ */
+/* ==================================================
+   SLIDER PRINCIPAL – Hero (sin flechas laterales)
+================================================== */
+
+/* 1) Contenedor general */
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #0a3a41;
+    border-radius: 0.75rem;
+}
+
+/* 2) Pista que se desplaza */
+.slider-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+/* 3) Imágenes dentro del track */
+.slider-track img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 600px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+}
+
+/* Texto sobre el slider */
+/* 4) Texto centrado encima (opcional) */
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    z-index: 2;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    animation: fadeSlideUp 1.2s ease-out forwards;
+    opacity: 0;
+    padding: 1rem;
+}
+
+.slider-text h2 {
+    font-size: 2rem;
+    color: #0D4B4C;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+.slider-text p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-hero {
+    background-color: #0D4B4C;;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    max-width: 90%;
+    margin: 0;
+}
+
+.btn-hero:hover {
+    background-color: #C89F65;
+}
+
+/* Dots del slider */
+/* 5) Dots indicadores */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+    gap: 12px;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    background: #c8c8c8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    /*background-color:#0D4B4C;*/
+    background: #0D4B4C;;
+}
+
+/* Animación fade-up */
+/* 6) Animación texto */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* 7) Responsive menores a 1024px */
+    @media (max-width: 1024px) {
+        .slider-track img {
+            max-height: 480px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .slider-text h2 {
+            font-size: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .slider-text p {
+            font-size: 0.9rem;
+            font-size: 1rem;
+        }
+    }
+
+    /* 8) Responsive menores a 768px */
+    @media (max-width: 768px) {
+        .slider-track img {
+            aspect-ratio: 4 / 3;
+            max-height: 360px;
+        }
+
+        .slider-text h2 {
+            font-size: 1.6rem;
+        }
+
+        .btn-hero {
+            padding: 0.6rem 1.5rem;
+
+            .slider-text p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* 9) Responsive menores a 480px */
+        @media (max-width: 480px) {
+            .slider-track img {
+                aspect-ratio: 4 / 3;
+                max-height: 260px;
+            }
+
+            .slider-text h2 {
+                font-size: 1.3rem;
+            }
+
+            .slider-text p {
+                font-size: 0.85rem;
+            }
+
+            .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }

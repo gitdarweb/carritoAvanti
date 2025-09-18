@@ -1,0 +1,44 @@
+/* legal.css – estilos para páginas legales: privacidad y términos */
+
+.legal-page,
+main.legal-privacidad {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    font-family: var(--font-sans);
+    font-weight: var(--font-regular);
+    color: var(--color-primary-darker);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+.legal-page h2,
+main.legal-privacidad h2 {
+    font-weight: var(--font-semi);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary-dark);
+    border-bottom: 2px solid var(--color-accent-green);
+    padding-bottom: 0.5rem;
+}
+
+.legal-page h3,
+main.legal-privacidad h3 {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-lg);
+    color: var(--color-secondary-dark);
+    font-weight: var(--font-semi);
+}
+
+.legal-page ul,
+main.legal-privacidad ul {
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    list-style-type: disc;
+}
+
+.legal-page p,
+main.legal-privacidad p,
+main.legal-privacidad li {
+    margin-bottom: var(--spacing-sm);
+}

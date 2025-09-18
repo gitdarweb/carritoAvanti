@@ -1,0 +1,48 @@
+/* ================================
+   RESET CSS - Normaliza estilos base
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #0A3A41;
+    line-height: 1.6;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    background: none;
+}

@@ -1,0 +1,76 @@
+/* ===================== SEARCH / CARRITO ===================== */
+/* archivo: search-cart.css */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.search-bar input {
+    border: none;
+    padding: 0.4rem;
+    width: 12rem;
+    background-color: transparent;
+    color: white;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+    color: #eee;
+}
+
+.btn-search {
+    background: var(--color-accent-gold);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    color: var(--color-primary-dark);
+}
+
+/* ===================== CARRITO (VISIBLE EN HEADER) ===================== */
+.user-actions .carrito-link {
+    color: #fff;
+    font-family: var(--font-sans);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    font-weight: var(--font-regular);
+    margin-left: 1rem;
+    /* espacio entre buscador y carrito */
+    white-space: nowrap;
+}
+
+/* ===================== RESPONSIVE: AJUSTES PARA MÓVILES ===================== */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        margin-top: 1rem;
+        flex: 1;
+    }
+
+    .search-bar input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .btn-search {
+        padding: 0.4rem 0.6rem;
+    }
+
+    .user-actions {
+        margin-top: 0.8rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .user-actions .carrito-link {
+        font-size: 1rem;
+    }
+}

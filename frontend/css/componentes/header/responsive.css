@@ -1,0 +1,155 @@
+/* ===================== RESPONSIVE, ajustes para móviles y tablets ===================== */
+/* archivo: responsive.css */
+
+/* === MÓVIL: hasta 768px === */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .site-header .logo {
+        margin-bottom: 1rem;
+    }
+
+    .search-bar,
+    .user-actions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+/* === TABLETS / INTERMEDIO: 769px a 1279px === */
+@media (min-width: 769px) and (max-width: 1279px) {
+    .burger {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex;
+        /* flujo flex normal */
+        position: static;
+        /* sin absolute */
+        transform: none;
+        /* quita translate */
+        margin: 0 auto;
+        /* centra en su contenedor */
+        gap: var(--spacing-lg);
+    }
+
+    .main-nav ul {
+        display: flex;
+        gap: var(--spacing-lg);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+    }
+
+    .site-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* === ESCRITORIO GRANDE: desde 1280px en adelante === */
+@media (min-width: 1280px) {
+    .burger {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .main-nav ul {
+        display: flex;
+        gap: var(--spacing-lg);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+    }
+
+    .site-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+/* === AJUSTE FINO MOBILE: subir logo y achicar altura del header === */
+@media (max-width: 768px) {
+
+    /* Header más compacto */
+    .site-header {
+        /* menos alto: reducimos padding y el espacio entre elementos */
+        padding: var(--spacing-sm) var(--spacing-md);
+        gap: var(--spacing-xs);
+        /* aseguramos buen render del fondo */
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    /* Logo más arriba y con menos “aire” */
+    .site-header .logo {
+        margin: 0;
+        /* quitamos margin-bottom previo */
+        /* si querés subirlo un poco más, descomentá la línea de abajo */
+        /* margin-top: -0.25rem; */
+    }
+
+    .site-header .logo img {
+        max-height: 2.6rem;
+        /* un toque más chico para bajar la altura total */
+        display: block;
+    }
+
+    /* Evitar separaciones extra que agrandan el header */
+    .burger {
+        margin-top: 0;
+        /* evita empujar todo hacia abajo */
+    }
+
+    .search-bar,
+    .user-actions {
+        width: auto;
+        /* que no ocupen 100% en columna */
+        margin-top: 0;
+        /* sin salto extra debajo del logo */
+        justify-content: center;
+        /* mantenemos centrado */
+    }
+
+    .user-actions .carrito-link {
+        white-space: nowrap;
+        /* evita ruptura de línea del carrito */
+    }
+}

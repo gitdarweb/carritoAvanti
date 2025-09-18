@@ -1,0 +1,120 @@
+/* === CATÁLOGOS POR MARCA (AVANTI STYLE) === */
+
+.grid-marcas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.marca-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.marca-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+.marca-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.marca-box:hover img {
+    filter: brightness(1);
+}
+
+/* Texto de la marca con efecto desde abajo */
+.marca-nombre {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(6, 45, 48, 0.6);
+    /* más transparente */
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 12px 8px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    z-index: 3;
+}
+
+.marca-box:hover .marca-nombre {
+    transform: translateY(0%);
+}
+
+/* Efecto de clic: pulso suave */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.96);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.marca-box.clicked {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+
+@media (max-width: 992px) {
+    .grid-marcas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .marca-box img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-marcas {
+        grid-template-columns: 1fr;
+    }
+
+    .marca-box img {
+        height: 160px;
+    }
+
+    .marca-nombre {
+        font-size: 1rem;
+        padding: 10px 6px;
+    }
+        /* --- Compatibilidad touch: mostrar efecto como :hover --- */
+        .marca-box.touch-active .marca-nombre {
+            transform: translateY(0%);
+        }
+    
+        /* Opcional: también aplicar el cambio de brillo/scale de la imagen en touch para que se vea igual que hover */
+        .marca-box.touch-active img {
+            filter: brightness(1);
+            transform: scale(1.03);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+}

@@ -1,0 +1,47 @@
+/* 1. RESET: limpia todos los estilos de navegador */
+@import url('./componentes/reset.css');
+
+/* 2. VARIABLES: defines colores, tipografías y espaciados que usarán todos */
+/*    Debe ir antes de cualquier módulo que use var(--…) */
+@import url('./componentes/variables.css');
+
+/* 3. BASE: estilos globales (body, tipografía base, headings, párrafos, utilidades) */
+@import url('./componentes/base.css');
+/* 3.1 LAYOUT: contenedor y padding general */
+/*@import url('./componentes/layout.css');*/
+
+/* 4. BOTONES (globales): unifica .btn-hero y similares */
+@import url('./componentes/botones.css');
+
+/* 5. COMPONENTES GLOBALES (slider, marcas, separadores, etc.) */
+@import url('./componentes/slider.css');
+@import url('./componentes/separadores.css');
+@import url('./componentes/touch-hover.css');
+
+/* 6. HEADER / SIDEBAR / NAVIGATION */
+@import url('./componentes/header/estructura.css');
+@import url('./componentes/header/burger.css');
+@import url('./componentes/header/responsive.css');
+@import url('./componentes/header/overlay.css');
+@import url('./componentes/header/search-cart.css');
+@import url('./componentes/header/sidebar.css');
+
+/* 7. SECCIONES PRINCIPALES */
+@import url('./componentes/marcas-categorias.css');
+@import url('./componentes/catalogo-productos.css');
+@import url('./componentes/productos.css');
+@import url('./componentes/como-comprar.css');
+@import url('./componentes/nosotras.css');
+@import url('./componentes/contacto.css');
+@import url('./componentes/carrito.css');
+@import url('./componentes/carrito-detalle.css');
+
+/* 8. FOOTER y WHATSAPP flotante */
+@import url('./componentes/footer.css');
+@import url('./componentes/whatsapp.css');
+
+/* 9. PÁGINAS LEGALES */
+@import url('./componentes/legal.css');
+/* 10. ANIMACIONES */
+@import url('./componentes/animations.css');
+/* 11. PRODUCTOS: estilos específicos para páginas de productos */

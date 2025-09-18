@@ -1,0 +1,16 @@
+/* ===================== OVERLAY, fondo oscuro que aparece al abrir el menú. ===================== */
+/* archivo: overlay.css */
+.sidebar-overlay {
+    display: none;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}

@@ -1,0 +1,85 @@
+/* touch-hover.css
+   Módulo CSS común para replicar efectos :hover en dispositivos táctiles.
+   Incluir en <head> con:
+     <link rel="stylesheet" href="css/touch-hover.css">
+   O importarlo desde styles.css con:
+     @import url('touch-hover.css');
+
+   Este archivo define la clase .touch-active que el JS activará al pasar
+   el dedo por encima de los elementos objetivo (.marca-box, .beneficio, .contact-icon).
+*/
+
+/* -----------------------------
+   Transiciones base (seguridad)
+   ----------------------------- */
+.marca-box,
+.beneficio,
+.contact-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+/* -----------------------------
+   Marcas: simular :hover
+   ----------------------------- */
+.marca-box.touch-active {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.marca-box.touch-active img {
+    filter: brightness(1);
+    transform: scale(1.03);
+}
+
+.marca-box.touch-active .marca-nombre {
+    transform: translateY(0%);
+}
+
+/* -----------------------------
+   Cómo comprar (beneficios)
+   ----------------------------- */
+.beneficio.touch-active {
+    box-shadow: 0 6px 14px rgba(6, 45, 48, 0.15);
+    transform: translateY(-4px);
+}
+
+.beneficio.touch-active img {
+    transform: scale(1.05);
+}
+
+/* -----------------------------
+   Contacto: íconos
+   ----------------------------- */
+.contact-icon.touch-active {
+    transform: scale(1.15);
+}
+
+/* Colores específicos para cada icono (mantener la misma lógica de clases en HTML)
+   Ej: <div class="contact-icon whatsapp">...</div> */
+.contact-icon.touch-active.whatsapp {
+    background-color: #fff;
+    color: #25D366;
+}
+
+.contact-icon.touch-active.instagram {
+    background-color: #fff;
+    color: #E4405F;
+}
+
+.contact-icon.touch-active.mapa {
+    background-color: #fff;
+    color: #FF6F00;
+}
+
+/* -----------------------------
+   Seguridad responsive: si querés limitarlo por ancho
+   (opcional) — por defecto no limitamos, el JS ya detecta touch.
+   ----------------------------- */
+@media (max-width: 480px) {
+
+    /* leves ajustes en móviles muy chicos */
+    .marca-box img {
+        height: auto;
+    }
+}
