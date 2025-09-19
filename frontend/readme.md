@@ -109,4 +109,4 @@ WhatsApp: +54 9 221 3533461
 
 Email: duartedario780@gmail.com
 
-Preparado para la presentación final a la diseñadora de Avanti.
+Preparado para la presentación final a la diseñadora de Avanti.<!---->

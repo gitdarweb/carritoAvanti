@@ -7,7 +7,7 @@
 
    Este archivo define la clase .touch-active que el JS activará al pasar
    el dedo por encima de los elementos objetivo (.marca-box, .beneficio, .contact-icon).
-*/
+*//**/
 
 /* -----------------------------
    Transiciones base (seguridad)

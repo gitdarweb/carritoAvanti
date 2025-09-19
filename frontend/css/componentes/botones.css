@@ -16,7 +16,7 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
     gap: 0.5rem;
 }
-
+/**/
 /* ✅ Hover compartido */
 .btn-hero:hover,
 .btn-agregar:hover {

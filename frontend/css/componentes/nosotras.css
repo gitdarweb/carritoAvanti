@@ -4,7 +4,7 @@
     font-family: 'QuantumMystique';
     src: url('../../fonts/QuantumMystique.ttf') format('truetype');
 }
-
+/**/
 .hero-info {
 background: var(--color-primary-darker);
     background-size: cover;
